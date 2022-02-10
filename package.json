@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css --style compressed",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexandre-Meurot/Portfolio.git"
+  },
+  "author": "Alexandre Meurot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alexandre-Meurot/Portfolio/issues"
+  },
+  "homepage": "https://github.com/Alexandre-Meurot/Portfolio#readme"
+}
