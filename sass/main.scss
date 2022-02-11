@@ -1,0 +1,139 @@
+$font-txt: 'Georama', sans-serif;
+$h1-size: 30px;
+$header-bc: #34495e;
+$txt-color-light: #ecf0f1;
+$presentation-bc: #27ae60;
+$competences-bc: #16a085;
+$projets-bc: #2c3e50;
+$contact-bc: #e67e22;
+$card-bc: #95a5a6;
+
+@mixin h1-style{
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 20px
+}
+
+@mixin h2-style{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@mixin p-style{
+    font-size: 20px;
+    padding: 20px;
+}
+
+@mixin header($bc-color, $txt-color){
+    width: 100%;
+    height: 100px;
+    background-color: $bc-color;
+    color: $txt-color;
+}
+
+@mixin section-row ($bc-color, $txt-color) {
+    width: 50%;
+    height: 600px;
+    background-color: $bc-color;
+    color: $txt-color;
+    padding: 20px;
+}
+
+@mixin section-column($bc-color, $txt-color) {
+    height: 600px;
+    background-color: $bc-color;
+    color: $txt-color;
+    padding: 20px;
+
+}
+
+@mixin footer($bc-color, $txt-color){
+    width: 100%;
+    height: 100px;
+    background-color: $bc-color;
+    color: $txt-color;
+}
+
+body{
+    font-family: $font-txt;
+
+    h1{
+        @include h1-style();
+    }
+
+    h2{
+        @include h2-style();
+    }
+
+    p{
+        @include p-style();
+    }
+}
+
+.header{
+    @include header($header-bc, $txt-color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .menu{
+        display: flex;
+
+        li{
+            margin: 20px;
+        }
+    }
+}
+
+.row{
+    display: flex;
+
+    .presentation{
+        @include section-row($presentation-bc, $txt-color-light);
+    }
+
+    .competences{
+        @include section-row($competences-bc,$txt-color-light);
+    }
+}
+
+.projets{
+    @include section-column($projets-bc,$txt-color-light);
+
+    &__cards{
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .card{
+        width: 400px;
+        height: 300px;
+        background-color: $card-bc;
+    }
+}
+
+.contact{
+    @include section-column($contact-bc,$txt-color-light);
+}
+
+.footer{
+    @include footer($header-bc, $txt-color-light);
+
+    &__logos{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        &__logo{
+            font-size: 40px;
+            margin: 10px;
+        }
+    }
+}
+
